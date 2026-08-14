@@ -156,7 +156,6 @@ export default function RsvpForm() {
           Your presence will be a treasured blessing as we gather with family and friends to celebrate this sacred milestone.
         </p>
         <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mt-2">Kindly Respond (RSVP)</h2>
-        <p className="font-serif text-sm md:text-base italic text-gold-600 mt-2">before 10th August 2026</p>
         <div className="w-16 h-[1px] bg-gold-300 mx-auto mt-4" />
       </div>
 
