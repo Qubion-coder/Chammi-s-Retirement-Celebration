@@ -8,7 +8,7 @@ export default function AudioPlayer({ autoPlayTrigger }: { autoPlayTrigger: bool
   useEffect(() => {
     // Initialize audio element only once
     if (!audioRef.current) {
-      audioRef.current = new Audio("/Pentatonix - Hallelujah (Official Video).mp3");
+      audioRef.current = new Audio("/datha-dara-naada-gama-various-artists (1).mp3");
       audioRef.current.loop = true;
     }
     
@@ -74,19 +74,7 @@ export default function AudioPlayer({ autoPlayTrigger }: { autoPlayTrigger: bool
         )}
       </button>
 
-      {isPlaying && (
-        <div className="flex h-8 items-center gap-1.5 rounded-full bg-cream/90 backdrop-blur-sm border border-gold-200/50 px-3 py-1 shadow-sm text-xs text-gold-700 font-serif font-medium">
-          <Music className="h-3 w-3 animate-bounce" />
-          <span className="tracking-wide">Hallelujah</span>
-          {/* Animated Equalizer Waveform */}
-          <div className="flex items-end gap-0.5 h-3">
-            <div className="w-0.5 bg-gold-500 h-2 animate-[pulse_1s_infinite_100ms]" />
-            <div className="w-0.5 bg-gold-400 h-3 animate-[pulse_0.8s_infinite_300ms]" />
-            <div className="w-0.5 bg-gold-500 h-1.5 animate-[pulse_1.2s_infinite_200ms]" />
-            <div className="w-0.5 bg-gold-300 h-2.5 animate-[pulse_0.9s_infinite_400ms]" />
-          </div>
-        </div>
-      )}
+
     </div>
   );
 }

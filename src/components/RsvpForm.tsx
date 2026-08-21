@@ -35,7 +35,7 @@ export default function RsvpForm() {
       canvas.width = canvas.parentElement?.clientWidth || 600;
       canvas.height = 300;
 
-      const colors = ['#b38f4d', '#eadbba', '#d4af37', '#fcfbfa', '#f5eedc'];
+      const colors = ['#d90429', '#e63946', '#b38f4d', '#fcfbfa', '#d4af37'];
       const particles: Particle[] = [];
 
       // Create particles
@@ -152,14 +152,15 @@ export default function RsvpForm() {
       
       {/* RSVP HEADER */}
       <div className="text-center mb-8 px-4">
-        <p className="font-serif text-lg md:text-xl text-stone-600 italic mb-6 max-w-xl mx-auto leading-relaxed">
-          Your presence will be a treasured blessing as we gather with family and friends to celebrate this sacred milestone.
+        <p className="font-playball text-3xl md:text-5xl text-theme-900 mb-4 drop-shadow-sm">RSVP</p>
+        <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-stone-500 font-bold mb-2">Celebrate With Us</p>
+        <p className="text-stone-600 font-montserrat text-sm md:text-base leading-loose max-w-2xl mx-auto mb-10">
+          We would be honored to celebrate this special day with you. Kindly let us know if you’ll be joining us.
         </p>
-        <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mt-2">Kindly Respond (RSVP)</h2>
-        <div className="w-16 h-[1px] bg-gold-300 mx-auto mt-4" />
+        <div className="w-16 h-[1px] bg-theme-300 mx-auto mt-4 mb-4" />
       </div>
 
-      <div className="bg-cream paper-texture rounded-xl border border-gold-300/30 gold-glow overflow-hidden relative">
+      <div className="relative">
         <AnimatePresence mode="wait">
           {!hasSubmitted ? (
             <motion.form
@@ -168,12 +169,12 @@ export default function RsvpForm() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onSubmit={handleSubmit}
-              className="p-6 md:p-10 space-y-6"
+              className="bg-white p-6 md:p-10 rounded-[2rem] shadow-[0_20px_50px_-20px_rgba(217,4,41,0.15)] border border-theme-200/60 space-y-6 text-left"
             >
               {/* Full Name field */}
-              <div className="space-y-2">
-                <label className="font-serif text-base md:text-lg text-stone-700 font-medium block">
-                  Your Full Name <span className="text-gold-600">*</span>
+              <div>
+                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-2">
+                  Your Full Name <span className="text-theme-600">*</span>
                 </label>
                 <input
                   type="text"
@@ -181,42 +182,42 @@ export default function RsvpForm() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Mr. & Mrs. Perera"
-                  className="w-full rounded-md border border-stone-300/70 bg-white/95 px-4 py-3 font-sans text-base text-stone-800 placeholder-stone-400 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500/50 transition-colors"
+                  className="w-full bg-theme-50/50 border border-theme-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-theme-400 transition-all font-montserrat"
                 />
               </div>
 
               {/* Attendance Selection */}
-              <div className="space-y-2">
-                <label className="font-serif text-base md:text-lg text-stone-700 font-medium block">
-                  Will you join us in Negombo? <span className="text-gold-600">*</span>
+              <div>
+                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3">
+                  Will you join us in Homagama? <span className="text-theme-600">*</span>
                 </label>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <button
                     type="button"
                     onClick={() => setStatus('attending')}
-                    className={`rounded-md border py-4 px-4 font-sans text-sm md:text-base font-semibold tracking-wide transition-all duration-300 flex items-center justify-center gap-2 ${
+                    className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-xl border cursor-pointer transition-all ${
                       status === 'attending'
-                        ? 'border-gold-500 bg-gold-50 text-gold-700 font-bold'
-                        : 'border-stone-300/70 bg-white text-stone-600 hover:bg-stone-50'
+                        ? 'bg-theme-500 text-white border-theme-600 shadow-md'
+                        : 'bg-theme-50/50 border-theme-200 text-stone-600 hover:bg-theme-100'
                     }`}
                   >
-                    <CheckCircle className={`h-4 w-4 ${status === 'attending' ? 'text-gold-600' : 'text-stone-300'}`} />
-                    <span>Joyfully Accepts</span>
+                    <CheckCircle className={`h-4 w-4 ${status === 'attending' ? 'text-white' : 'text-stone-400'}`} />
+                    <span className="text-xs font-bold uppercase tracking-wider">Joyfully Accept</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={() => setStatus('declined')}
-                    className={`rounded-md border py-4 px-4 font-sans text-sm md:text-base font-semibold tracking-wide transition-all duration-300 flex items-center justify-center gap-2 ${
+                    className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-xl border cursor-pointer transition-all ${
                       status === 'declined'
-                        ? 'border-gold-500 bg-gold-50 text-gold-700 font-bold'
-                        : 'border-stone-300/70 bg-white text-stone-600 hover:bg-stone-50'
+                        ? 'bg-stone-500 text-white border-stone-600 shadow-md'
+                        : 'bg-theme-50/50 border-theme-200 text-stone-600 hover:bg-theme-100'
                     }`}
                   >
-                    <div className={`h-4 w-4 rounded-full border-2 flex items-center justify-center ${status === 'declined' ? 'border-gold-600 text-gold-600' : 'border-stone-300 text-transparent'}`}>
-                      {status === 'declined' && <div className="h-1.5 w-1.5 rounded-full bg-gold-600" />}
+                    <div className={`h-3 w-3 rounded-full border-2 flex items-center justify-center ${status === 'declined' ? 'border-white text-white' : 'border-stone-400 text-transparent'}`}>
+                      {status === 'declined' && <div className="h-1 w-1 rounded-full bg-white" />}
                     </div>
-                    <span>Regretfully Declines</span>
+                    <span className="text-xs font-bold uppercase tracking-wider">Regretfully Decline</span>
                   </button>
                 </div>
               </div>
@@ -229,9 +230,9 @@ export default function RsvpForm() {
                   className="space-y-4"
                 >
                   {/* Guests count */}
-                  <div className="space-y-2">
-                    <label className="font-serif text-base md:text-lg text-stone-700 font-medium flex items-center gap-2">
-                      <Users className="h-5 w-5 text-gold-500" />
+                  <div>
+                    <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-2 flex items-center gap-2">
+                      <Users className="h-4 w-4 text-theme-500" />
                       <span>Number of Guests Attending</span>
                     </label>
                     <div className="flex items-center gap-3">
@@ -240,58 +241,53 @@ export default function RsvpForm() {
                           key={num}
                           type="button"
                           onClick={() => setGuestsCount(num)}
-                          className={`h-11 w-11 rounded-full font-sans text-base font-bold transition-all ${
+                          className={`h-11 w-11 rounded-full font-montserrat text-sm font-bold transition-all ${
                             guestsCount === num
-                              ? 'bg-gold-600 text-white shadow-sm shadow-gold-600/35'
-                              : 'bg-white border border-stone-300 text-stone-600 hover:bg-stone-50'
+                              ? 'bg-theme-600 text-white shadow-md'
+                              : 'bg-theme-50/50 border border-theme-200 text-stone-600 hover:bg-theme-100'
                           }`}
                         >
                           {num}
                         </button>
                       ))}
-                      <input
-                        type="number"
-                        min="1"
-                        max="20"
-                        value={guestsCount}
-                        onChange={(e) => setGuestsCount(Math.max(1, parseInt(e.target.value) || 1))}
-                        className="w-20 rounded-md border border-stone-300/70 bg-white px-3 py-2 text-center font-sans text-base text-stone-800 placeholder-stone-400 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500/50 transition-colors"
-                        title="Custom Guest Count"
-                      />
                     </div>
                   </div>
-
-
                 </motion.div>
               )}
 
-              {/* Congratulatory message / prayer */}
-              <div className="space-y-2">
-                <label className="font-serif text-base md:text-lg text-stone-700 font-medium flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5 text-gold-500" />
-                  <span>Send a Blessing or Message of Love for Ayaan (Optional)</span>
+              {/* Prayer / Wish section */}
+              <div>
+                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-2 flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4 text-theme-500" />
+                  <span>Send a Message or Well Wishes for Chammi (Optional)</span>
                 </label>
                 <textarea
                   rows={4}
                   value={prayerWish}
                   onChange={(e) => setPrayerWish(e.target.value)}
-                  placeholder="Write a warm prayer, message, or blessing for Ayaan on his First Communion..."
-                  className="w-full rounded-md border border-stone-300/70 bg-white/95 px-4 py-3 font-sans text-base text-stone-800 placeholder-stone-400 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500/50 transition-colors resize-none"
+                  placeholder="Write a warm message or well wishes for Chammi on her retirement..."
+                  className="w-full bg-theme-50/50 border border-theme-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-theme-400 transition-all font-montserrat resize-none"
                 />
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full rounded-md bg-gold-gradient hover:opacity-95 text-white font-sans text-sm md:text-base uppercase tracking-[0.2em] font-semibold py-4 transition-opacity duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_12px_rgba(179,143,77,0.3)] disabled:opacity-50"
+                disabled={isSubmitting || !status || !name.trim()}
+                className="w-full bg-gradient-to-r from-[#e63946] to-[#a41623] text-white px-8 py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-xs hover:shadow-lg hover:shadow-theme-500/30 hover:from-[#a41623] hover:to-[#780000] disabled:opacity-50 transition-all flex items-center justify-center gap-3 mt-4"
               >
                 {isSubmitting ? (
-                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                  <>
+                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
                 ) : (
                   <>
-                    <Send className="h-3.5 w-3.5" />
-                    <span>Send RSVP & Blessings</span>
+                    <Send className="h-4 w-4" />
+                    Send RSVP
                   </>
                 )}
               </button>
@@ -318,15 +314,15 @@ export default function RsvpForm() {
                 Your response has been treasured.
               </p>
 
-              <p className="font-sans text-sm md:text-base text-stone-500 mt-4 max-w-md leading-relaxed">
+              <p className="font-montserrat text-sm md:text-base text-stone-500 mt-4 max-w-md leading-relaxed">
                 {status === 'attending' 
-                  ? `We are so delighted that you will join us for Ayaan's First Holy Communion on 29th of August 2026. Your presence is a true blessing!`
-                  : `We are sorry you won't be able to celebrate with us in person, but we truly appreciate your lovely blessings and prayers for Ayaan.`}
+                  ? `We are so delighted that you will join us for Chammi's Retirement Celebration on 9th of October 2026. Your presence means the world to us!`
+                  : `We are sorry you won't be able to celebrate with us in person, but we truly appreciate your lovely wishes for Chammi.`}
               </p>
 
               <button
-                onClick={resetForm}
-                className="mt-8 rounded-full border border-gold-300/40 hover:bg-gold-50/50 text-gold-700 px-6 py-2 text-xs font-sans font-semibold tracking-wide transition-colors"
+                onClick={() => setHasSubmitted(false)}
+                className="mt-8 text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-stone-400 hover:text-theme-600 transition-colors"
               >
                 Submit another response
               </button>

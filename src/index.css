@@ -5,6 +5,9 @@
   --font-serif: "Cormorant Garamond", serif;
   --font-display: "Cinzel", serif;
   --font-cursive: "Pinyon Script", cursive;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-playball: "Playball", cursive;
+  --font-sinhala: "Abhaya Libre", serif;
 
   --color-gold-50: #fbf8f1;
   --color-gold-100: #f5eedc;
@@ -16,16 +19,35 @@
   --color-gold-700: #836030;
   --color-gold-800: #674a26;
   --color-gold-900: #4e361c;
+
+  --color-red-500: #e63946;
+  --color-red-600: #d90429;
+  --color-red-700: #a41623;
+  --color-red-800: #780000;
+  --color-red-900: #5c0000;
   
+  --color-theme-50: #fcf0f1;
+  --color-theme-100: #fad4d7;
+  --color-theme-200: #f4a7b0;
+  --color-theme-300: #ec7584;
+  --color-theme-400: #e63946;
+  --color-theme-500: #d90429;
+  --color-theme-600: #a41623;
+  --color-theme-700: #780000;
+  --color-theme-800: #5c0000;
+  --color-theme-900: #420000;
+  
+  --color-sage: #FCD34D;
+  --color-paper: #f0eceb;
   --color-gold-metallic: #d4af37;
   --color-gold-shimmer: #f3e5ab;
   --color-cream: #faf8f5;
   --color-champagne: #f4efe2;
 }
 
-/* Elegant gold gradient utility */
+/* Elegant gold and red gradient utility */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #b38f4d 0%, #eadbba 25%, #b38f4d 50%, #fbf8f1 75%, #9e783c 100%);
+  background: linear-gradient(135deg, #a41623 0%, #d90429 25%, #b38f4d 50%, #fbf8f1 75%, #a41623 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,11 +55,11 @@
 }
 
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #836030 0%, #b38f4d 30%, #eadbba 50%, #b38f4d 70%, #836030 100%);
+  background: linear-gradient(135deg, #a41623 0%, #d90429 30%, #eadbba 50%, #b38f4d 70%, #780000 100%);
 }
 
 .border-gold-gradient {
-  border-image: linear-gradient(135deg, #b38f4d, #eadbba, #9e783c, #fbf8f1, #b38f4d) 1;
+  border-image: linear-gradient(135deg, #a41623, #eadbba, #9e783c, #fbf8f1, #a41623) 1;
 }
 
 @keyframes shine {
@@ -115,3 +137,117 @@
   scrollbar-width: none;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-paper);
+}
+
+.clip-path-envelope {
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.clip-path-envelope-bottom {
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.mandala-frame {
+  --mandala-accent-opacity: 0.38;
+  --mandala-soft-opacity: 0.16;
+}
+
+.mandala-corner {
+  position: absolute;
+  width: clamp(300px, 38vw, 620px);
+  aspect-ratio: 1 / 1;
+  opacity: var(--mandala-accent-opacity);
+  filter: sepia(1) saturate(1.55) hue-rotate(285deg) brightness(1.12) contrast(1.05);
+}
+
+.mandala-corner.is-soft {
+  opacity: var(--mandala-soft-opacity);
+}
+
+.website-shell {
+  background:
+    radial-gradient(circle at 18% 14%, rgba(217, 4, 41, 0.05), transparent 38%),
+    radial-gradient(circle at 84% 72%, rgba(217, 4, 41, 0.03), transparent 42%),
+    linear-gradient(180deg, #fcfbfa 0%, #fcfbfa 42%, #fcfbfa 100%);
+}
+
+.section-floral-overlay {
+  opacity: 0.6;
+}
+
+.section-floral-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(217, 4, 41, 0.05), transparent 35%),
+    radial-gradient(circle at 78% 75%, rgba(217, 4, 41, 0.05), transparent 38%);
+}
+
+.paper-grain {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.8px),
+    radial-gradient(circle at 78% 42%, rgba(217, 4, 41, 0.05) 0.6px, transparent 0.9px),
+    radial-gradient(circle at 42% 76%, rgba(179, 143, 77, 0.05) 0.5px, transparent 0.8px);
+  background-size: 9px 9px, 15px 15px, 18px 18px;
+}
+
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
+.smooth-mobile-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+}
+
+@supports not (content-visibility: auto) {
+  .cv-auto {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .cv-auto {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+}
+
+.text-gold-shiny {
+  background: linear-gradient(to right,
+      #bf953f 0%,
+      #e0c086 25%,
+      #fdf0c3 50%,
+      #e0c086 75%,
+      #bf953f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
