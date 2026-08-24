@@ -70,10 +70,10 @@ export default function App() {
                   Invitation
                 </button>
                 <button
-                  onClick={() => scrollToSection('rsvp-and-wishes-section')}
+                  onClick={() => scrollToSection('venue-section')}
                   className="hover:text-gold-600 transition-colors"
                 >
-                  RSVP
+                  Location
                 </button>
               </nav>
 
@@ -116,7 +116,7 @@ export default function App() {
                     className="mt-12 md:mt-0"
                   >
                     <span className="block text-[12px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.6em] text-theme-700 font-bold mb-2">
-                      Please join us
+                      PLEASE JOIN WITH US
                     </span>
                   </motion.div>
 
@@ -125,7 +125,7 @@ export default function App() {
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.9, duration: 0.8 }}
-                      className="font-sinhala text-2xl md:text-3xl text-theme-800 mb-2 font-bold"
+                      className="font-sinhala text-4xl md:text-5xl text-theme-800 mb-2 font-bold"
                     >
                       විශ්‍රාම සැමරුම
                     </motion.h2>
@@ -141,7 +141,7 @@ export default function App() {
                       transition={{ delay: 1.2, duration: 0.5 }}
                       className="font-serif text-3xl md:text-5xl text-amber-500 italic font-light my-2 md:my-4"
                     >
-                      Retirement
+                      Retirement Celebration
                     </motion.div>
                   </div>
 
@@ -157,11 +157,22 @@ export default function App() {
                       <div className="h-px w-full bg-gradient-to-l from-transparent via-amber-300 to-theme-400" />
                     </div>
                     <div className="font-cinzel space-y-2">
-                      <p className="text-lg md:text-base text-stone-700 tracking-[0.2em] md:tracking-[0.3em] font-bold">09 OCTOBER 2026</p>
-                      <p className="text-[11px] md:text-[9px] text-theme-600 tracking-[0.2em] uppercase font-bold">Homagama, Sri Lanka</p>
+                      <p className="text-lg md:text-base text-stone-700 tracking-[0.2em] md:tracking-[0.3em] font-bold">09TH OCTOBER 2026</p>
+                      <p className="text-[11px] md:text-[9px] text-theme-600 tracking-[0.2em] uppercase font-bold">HOTEL GREEN COURT - HOMAGAMA</p>
                     </div>
                   </motion.div>
                 </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2, duration: 1 }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-20"
+                onClick={() => scrollToSection('invitation-details-container')}
+              >
+                <span className="text-xs font-sinhala text-theme-700 font-bold uppercase tracking-widest">පහළට යන්න</span>
+                <ChevronUp className="w-5 h-5 text-theme-700 rotate-180 animate-bounce" />
               </motion.div>
             </section>
 
@@ -187,11 +198,11 @@ export default function App() {
                 </div>
 
                 <h3 className="font-serif text-xl italic text-gold-200">
-                  “Wishing you a wonderful retirement filled with joy and happiness.”
+                  “Cheers to the end of an era!”
                 </h3>
 
                 <p className="font-sans text-xs text-stone-500 leading-relaxed max-w-sm mx-auto">
-                  Thank you for joining us to celebrate Chammi's dedicated service and wishing her well in her new journey.
+                  Thank you for joining with us to celebrate Chammi's Special Day and wishing her well in her new journey.
                 </p>
 
                 <div className="pt-4 border-t border-stone-800/80 max-w-sm mx-auto flex flex-col items-center gap-4">

@@ -28,12 +28,12 @@ export default function Envelope({ onOpen, guestFullName }: EnvelopeProps) {
           </div>
         )}
         <span className="inline-block px-5 py-2 rounded-full bg-amber-50 border border-amber-200 text-[10px] uppercase tracking-[0.5em] text-amber-600 font-bold mb-6 mt-2 shadow-sm">
-          You're Invited
+          YOU'RE INVITED TO
         </span>
         <h1 className="font-cinzel text-4xl md:text-5xl text-theme-800 text-gold-shiny mb-4 tracking-tight">
-          Chammi's Retirement
+          Chammi's Retirement Celebration
         </h1>
-        <p className="text-stone-500 text-sm tracking-[0.2em] font-light">OCTOBER 09, 2026</p>
+        <p className="text-stone-500 text-sm tracking-[0.2em] font-light">OCTOBER 9TH, 2026</p>
       </motion.div>
 
       {/* Gatefold Envelope */}
@@ -68,7 +68,7 @@ export default function Envelope({ onOpen, guestFullName }: EnvelopeProps) {
         </motion.div>
 
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 text-[8px] uppercase tracking-[0.45em] text-amber-600/90 font-bold bg-white/80 backdrop-blur-md px-6 py-2.5 rounded-full border border-amber-200/80 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          Tap To Open
+          Touch to Open
         </div>
       </div>
     </motion.div>

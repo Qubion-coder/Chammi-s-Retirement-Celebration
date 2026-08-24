@@ -236,7 +236,7 @@ export default function RsvpForm() {
                       <span>Number of Guests Attending</span>
                     </label>
                     <div className="flex items-center gap-3">
-                      {[1, 2, 3, 4, 5].map((num) => (
+                      {[1].map((num) => (
                         <button
                           key={num}
                           type="button"

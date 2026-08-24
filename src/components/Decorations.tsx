@@ -62,11 +62,11 @@ export function FloatingPetals({ disabled = false }: { disabled?: boolean }) {
 
     // Red, White, Gold theme colors
     const colors = ["#d90429", "#e63946", "#fcfbfa", "#f5eedc", "#FCD34D", "#D97706"];
-    const petalCount = isMobile ? 6 : 10;
+    const petalCount = isMobile ? 15 : 30;
     const newPetals = Array.from({ length: petalCount }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
-      size: Math.random() * 4 + 4,
+      size: Math.random() * 16 + 12,
       rotation: Math.random() * 360,
       duration: Math.random() * 11 + 16,
       delay: Math.random() * 20,
@@ -98,7 +98,7 @@ export function FloatingPetals({ disabled = false }: { disabled?: boolean }) {
             y: "110vh",
             x: `${petal.x + petal.drift}vw`,
             rotate: petal.rotation + (isLowPowerMode ? 360 : 720),
-            opacity: [0, 0.6, 0.4, 0],
+            opacity: [0, 0.9, 0.8, 0],
           }}
           transition={{
             duration: isLowPowerMode ? petal.duration * 1.2 : petal.duration,

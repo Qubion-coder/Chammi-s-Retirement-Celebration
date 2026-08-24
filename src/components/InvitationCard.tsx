@@ -51,7 +51,7 @@ function CountdownTimer() {
             </span>
 
             <div className="w-full flex justify-center mt-2 sm:mt-3 md:mt-6 mb-1 sm:mb-2 relative z-10">
-              <span className="text-[5px] sm:text-[6px] md:text-[8px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-stone-500 font-bold px-2 sm:px-3 py-1 sm:py-1.5 bg-stone-50 rounded-full border border-theme-100/50 shadow-sm whitespace-nowrap">
+              <span className="text-[8px] sm:text-[9px] md:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-stone-500 font-bold px-2 sm:px-3 py-1 sm:py-1.5 bg-stone-50 rounded-full border border-theme-100/50 shadow-sm whitespace-nowrap">
                 {stat.label}
               </span>
             </div>
@@ -112,8 +112,8 @@ export default function InvitationCard({ onRsvpClick, guestFullName }: Invitatio
               <div className="absolute inset-0 opacity-[0.02] paper-grain pointer-events-none" />
               <div className="relative z-10 space-y-4 py-8 md:py-12 flex flex-col items-center">
 
-                <h3 className="text-5xl md:text-7xl font-playball text-theme-800 text-gold-shiny group-hover:scale-110 transition-transform duration-700 pt-2 drop-shadow-sm">Chammi</h3>
-                <p className="text-xs md:text-sm font-cinzel text-stone-600 tracking-wide leading-relaxed mt-4">After 30 years of dedicated service</p>
+                <h3 className="text-5xl md:text-7xl font-playball text-theme-800 text-gold-shiny group-hover:scale-110 transition-transform duration-700 pt-2 drop-shadow-sm">Chammika</h3>
+                <p className="text-xs md:text-sm font-cinzel text-stone-600 tracking-wide leading-relaxed mt-4">After 36 Years of Dedicated Service</p>
               </div>
             </motion.div>
           </div>
@@ -126,11 +126,11 @@ export default function InvitationCard({ onRsvpClick, guestFullName }: Invitatio
           >
             <div className="w-1.5 h-1.5 rotate-45 bg-theme-300" />
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-32 text-center w-full max-w-4xl px-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-12 text-center w-full max-w-5xl px-4">
               <div className="flex flex-col items-center flex-1">
                 <Calendar className="w-6 h-6 md:w-8 md:h-8 text-theme-500 mb-4 opacity-80" />
                 <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-stone-400 font-bold mb-3">The Date</p>
-                <p className="font-cinzel text-xl md:text-3xl text-theme-900 text-gold-shiny tracking-widest font-bold whitespace-nowrap">FRIDAY, 09 OCTOBER</p>
+                <p className="font-cinzel text-xl md:text-3xl text-theme-900 text-gold-shiny tracking-widest font-bold whitespace-nowrap">FRIDAY, 09TH OCTOBER</p>
                 <p className="font-cinzel text-lg md:text-xl text-theme-600 tracking-[0.3em] font-normal mt-2">2026</p>
               </div>
 
@@ -152,6 +152,25 @@ export default function InvitationCard({ onRsvpClick, guestFullName }: Invitatio
                 <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">01:30 PM</p>
                 <p className="font-cinzel text-xs md:text-sm text-theme-600 tracking-[0.2em] mt-3 uppercase">To 04:00 PM</p>
               </div>
+
+              <div className="hidden md:flex flex-col items-center gap-3">
+                <div className="w-px h-12 bg-theme-200" />
+                <div className="w-1.5 h-1.5 rounded-full bg-theme-400" />
+                <div className="w-px h-12 bg-theme-200" />
+              </div>
+
+              <div className="md:hidden flex flex-row items-center gap-3">
+                <div className="h-px w-10 bg-theme-200" />
+                <div className="w-1.5 h-1.5 rounded-full bg-theme-400" />
+                <div className="h-px w-10 bg-theme-200" />
+              </div>
+
+              <div className="flex flex-col items-center flex-1">
+                <MapPin className="w-6 h-6 md:w-8 md:h-8 text-theme-500 mb-4 opacity-80" />
+                <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-stone-400 font-bold mb-3">The Venue</p>
+                <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">SKY LOUNGE</p>
+                <p className="font-cinzel text-[10px] md:text-xs text-theme-600 tracking-[0.15em] md:tracking-[0.2em] mt-3 uppercase max-w-[180px] md:max-w-none leading-relaxed">Hotel Green Court<br/>Homagama</p>
+              </div>
             </div>
 
             <div className="pt-8 w-full px-4 flex flex-col items-center gap-8">
@@ -159,14 +178,14 @@ export default function InvitationCard({ onRsvpClick, guestFullName }: Invitatio
                 <div className="absolute inset-0 bg-theme-100 blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
                 <p className="relative text-theme-800 bg-white shadow-[0_4px_20px_-5px_rgba(0,0,0,0.05)] text-[9px] md:text-[11px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase px-6 lg:px-10 py-4 lg:py-5 rounded-full border border-theme-200 flex items-center justify-center gap-4 w-full md:w-auto">
                   <span className="w-1.5 h-1.5 rotate-45 bg-theme-500 shrink-0" />
-                  <span className="whitespace-nowrap">Retirement Celebration</span>
+                  <span className="whitespace-nowrap">OFFICIALLY RETIRED</span>
                   <span className="w-1.5 h-1.5 rotate-45 bg-theme-500 shrink-0" />
                 </p>
               </div>
 
               <div className="text-center px-4 max-w-2xl mx-auto">
                 <p className="font-playball text-2xl md:text-3xl text-theme-800 mb-3 opacity-90 leading-relaxed">
-                  “Every new beginning comes from some other beginning's end.”
+                  “When you think you're at the end of something, you're at the beginning of something else.”
                 </p>
               </div>
             </div>
@@ -208,11 +227,29 @@ export default function InvitationCard({ onRsvpClick, guestFullName }: Invitatio
           </motion.div>
 
           <CountdownTimer />
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="mt-12 md:mt-16 relative z-20"
+          >
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Chammi's+Retirement+Celebration&dates=20261009T080000Z/20261009T103000Z&details=Join+us+to+celebrate+Chammi's+retirement+in+style.+The+Sky+Lounge+offers+a+beautiful+view+to+commemorate+36+years+of+dedicated+service.&location=Hotel+Green+Court,+Homagama,+Sri+Lanka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-theme-500 to-theme-700 text-white px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <Calendar className="w-4 h-4 md:w-5 md:h-5" />
+              Save the Date
+            </a>
+          </motion.div>
         </div>
       </section>
 
       {/* Venue Location Section */}
-      <section className="cv-auto py-24 md:py-36 bg-[#fcfbfa] w-full relative overflow-hidden">
+      <section id="venue-section" className="cv-auto py-24 md:py-36 bg-[#fcfbfa] w-full relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 paper-grain pointer-events-none" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-theme-200 blur-[150px] rounded-full opacity-20 pointer-events-none" />
 
@@ -250,7 +287,7 @@ export default function InvitationCard({ onRsvpClick, guestFullName }: Invitatio
                 </div>
 
                 <div className="pl-8 space-y-4 pt-4 text-stone-500 text-sm md:text-base tracking-wide font-light leading-relaxed">
-                  Join us to celebrate Chammi's retirement in style. The Sky Lounge offers a beautiful view to commemorate 30 years of dedicated service.
+                  Join with us to celebrate Chammi's Retirement in style! The Sky Lounge is the perfect, intimate venue to honor 36 years of dedicated service.
                 </div>
               </div>
 
