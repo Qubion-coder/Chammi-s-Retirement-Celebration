@@ -112,14 +112,14 @@ export default function RsvpForm() {
 
     try {
       // Google Apps Script Web App URL
-      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw76lG6B7vDJCGhCTDQaa9PC3rCWOVU-nX3vthiH3ZTWTxN_zfDfWvoax6yM0gg0Z-HHQ/exec';
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwXYGrMHhEUC2kJhnlWmPV7HGNIRH4Ih1xEnXjX_O5mkwSy699m1NataFMPEOcdFJCt4Q/exec';
       
-      if (SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+      if (SCRIPT_URL) {
         await fetch(SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors', // Required for Google Apps Script to avoid CORS preflight errors
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'text/plain;charset=utf-8', // Use text/plain for no-cors
           },
           body: JSON.stringify(newRsvp),
         });

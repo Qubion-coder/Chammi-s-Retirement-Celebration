@@ -67,6 +67,11 @@ export default function Envelope({ onOpen, guestFullName }: EnvelopeProps) {
           </div>
         </motion.div>
 
+        {/* Sinhala Text Under Seal */}
+        <div className="absolute top-[calc(50%+3.5rem)] md:top-[calc(50%+4.5rem)] left-1/2 -translate-x-1/2 z-30 text-amber-950/90 drop-shadow-md whitespace-nowrap text-sm md:text-base pointer-events-none font-bold">
+          මෙතැනින් විවෘත කරන්න
+        </div>
+
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 text-[8px] uppercase tracking-[0.45em] text-amber-600/90 font-bold bg-white/80 backdrop-blur-md px-6 py-2.5 rounded-full border border-amber-200/80 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           Touch to Open
         </div>
